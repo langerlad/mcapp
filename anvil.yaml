@@ -1,6 +1,6 @@
 allow_embedding: false
-package_name: M3_App_1
-name: M3 App 1
+package_name: Kostra
+name: Kostra
 startup_form: Form1
 renamed: true
 runtime_options:
@@ -9,4 +9,29 @@ runtime_options:
   server_version: python3-sandbox
   server_spec: {base: python310-standard}
 dependencies: []
-services: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+metadata: {title: MCA App}
+db_schema:
+  analyses:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: author
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: description
+      admin_ui: {width: 200, order: 2}
+      type: string
+    - name: created
+      admin_ui: {width: 200, order: 3}
+      type: datetime
+    - name: updated
+      admin_ui: {width: 200, order: 4}
+      type: datetime
+    title: Analyses
