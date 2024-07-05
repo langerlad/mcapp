@@ -34,4 +34,16 @@ db_schema:
     - name: updated
       admin_ui: {width: 200, order: 4}
       type: datetime
+    - name: id
+      admin_ui: {order: -1, width: 200}
+      type: number
+    - name: alternative
+      admin_ui: {width: 200, order: 5}
+      type: link_multiple
+      target: alternatives
     title: Analyses
+  alternatives:
+    client: none
+    server: full
+    columns: []
+    title: Alternatives
