@@ -1,0 +1,27 @@
+container: {type: ColumnPanel}
+components:
+- name: label_1
+  properties: {text: 'Analysis title:'}
+  type: Label
+  layout_properties: {grid_position: 'FFDVPP,XIPILA'}
+- name: analysis_name_box
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'FFDVPP,EGCIRW'}
+- name: label_2
+  properties: {text: 'Author:'}
+  type: Label
+  layout_properties: {grid_position: 'RMKJED,ZUULQH'}
+- name: analysis_author_box
+  properties: {}
+  type: TextBox
+  layout_properties: {grid_position: 'RMKJED,BKLQFU'}
+- name: label_3
+  properties: {text: 'Analysis description:'}
+  type: Label
+  layout_properties: {grid_position: 'CJDKSJ,CJUTQE'}
+- name: analysis_description_box
+  properties: {}
+  type: TextArea
+  layout_properties: {grid_position: 'CJDKSJ,BYQUTS'}
+is_package: true

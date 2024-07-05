@@ -7,7 +7,11 @@ components:
   properties: {col_widths: '{}'}
   name: content_panel
   layout_properties: {slot: default}
-  components: []
+  components:
+  - name: add_analysis_btn
+    properties: {text: Add Analysis, icon: 'fa:plus-circle', role: filled-button}
+    type: Button
+    layout_properties: {grid_position: 'LETZXB,HAOATZ'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
