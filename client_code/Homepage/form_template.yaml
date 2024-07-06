@@ -13,6 +13,10 @@ components:
     type: Button
     layout_properties: {grid_position: 'LETZXB,HAOATZ'}
     event_bindings: {click: add_analysis_btn_click}
+  - name: analyses_panel
+    properties: {item_template: AnalysisView}
+    type: RepeatingPanel
+    layout_properties: {grid_position: 'VIEHPO,TZYAPU'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
