@@ -11,3 +11,7 @@ class Homepage(HomepageTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def add_analysis_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    alert("You clicked the button")
