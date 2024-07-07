@@ -13,7 +13,7 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
-metadata: {title: MCA App}
+metadata: {title: MCApp, description: Multiple-criteria decision analysis, logo_img: 'asset:MCApp_logo.png'}
 db_schema:
   analyses:
     client: none

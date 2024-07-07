@@ -8,6 +8,7 @@ unique_ids:
   server_modules:
     Server: '1720296988191229963799708.04526'
   assets:
+    MCApp_logo.png: '1720379218505483112690247.852'
     standard-page.html: 5DW76KCZAKVH4DV2FCWFL5YST6HD4ERX
     theme.css: DBXBNNXVKL6E3PRY3FUFLJRDA7LELIGD
   scripts: {}
