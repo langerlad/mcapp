@@ -3,7 +3,7 @@ container:
   properties: {tooltip: Delete}
 components:
 - name: column_panel_1
-  properties: {role: elevated-card, col_widths: '{"SCCIWS":60,"KSXFVK":10,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10}'}
+  properties: {role: elevated-card, col_widths: '{"SCCIWS":70,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10,"ISFBCE":10}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'YSCLRO,DQRRBJ'}
   components:
@@ -14,13 +14,18 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''name'']', writeback: false}
   - name: edit_analysis_btn
-    properties: {text: '', role: filled-button, icon: 'fa:pencil-square', tooltip: Edit}
+    properties: {text: '', role: filled-button, icon: 'fa:pencil-square', tooltip: Edit, align: right}
     type: Button
-    layout_properties: {grid_position: 'KGTHPP,KSXFVK'}
+    layout_properties: {grid_position: 'KGTHPP,ISFBCE'}
     data_bindings: []
     event_bindings: {click: edit_analysis_btn_click}
+  - name: clone_analysis_btn
+    properties: {text: '', role: filled-button, icon: 'fa:clone', tooltip: Clone}
+    type: Button
+    layout_properties: {grid_position: 'KGTHPP,ZFYFGG'}
+    event_bindings: {click: clone_analysis_btn_click}
   - name: delete_analysis_btn
-    properties: {text: '', align: right, role: filled-button, icon: 'fa:trash', background: ''}
+    properties: {text: '', align: left, role: filled-button, icon: 'fa:trash', background: ''}
     type: Button
     layout_properties: {grid_position: 'KGTHPP,ZHCNDY'}
     data_bindings: []

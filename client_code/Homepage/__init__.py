@@ -40,3 +40,8 @@ class Homepage(HomepageTemplate):
   def delete_analysis(self, analysis, **event_args):
     # Delete the analysis
     anvil.server.call('delete_analysis', analysis)
+    self.refresh_analyses()
+
+  def clone_analysis(self, analysis, **event_args):
+    anvil.server.call('clone_analysis', analysis)
+    self.refresh_analyses()

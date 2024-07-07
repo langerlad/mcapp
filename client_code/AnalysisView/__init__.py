@@ -39,3 +39,8 @@ class AnalysisView(AnalysisViewTemplate):
     # (which is the analysis_panel on Homepage)
     if confirm(f"Are you sure you want to delete {self.item['name']}?"):
       self.parent.raise_event('x-delete-analysis', analysis=self.item)
+
+  def clone_analysis_btn_click(self, **event_args):
+    """This method is called when the "Clone" button is clicked"""
+    # Raise the 'x-clone-analysis' event on the parent
+    self.parent.raise_event('x-clone-analysis', analysis=self.item)
