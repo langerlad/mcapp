@@ -13,6 +13,7 @@ components:
     type: Button
     layout_properties: {grid_position: 'LETZXB,HAOATZ'}
     event_bindings: {click: add_analysis_btn_click}
+    data_bindings: []
   - name: analyses_panel
     properties: {item_template: AnalysisView}
     type: RepeatingPanel

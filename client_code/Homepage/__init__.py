@@ -14,8 +14,11 @@ class Homepage(HomepageTemplate):
     self.init_components(**properties)
     
     # Any code you write here will run before the form opens.
-    # Set an event handler on the RepeatingPanel (our 'analysis_panel')
+    
+    # Set an event handlers on the RepeatingPanel (our 'analysis_panel')
     self.analyses_panel.set_event_handler('x-delete-analysis', self.delete_analysis)
+    self.analyses_panel.set_event_handler('x-clone-analysis', self.clone_analysis)
+    
     self.refresh_analyses()
     
 
@@ -23,7 +26,7 @@ class Homepage(HomepageTemplate):
     """This method is called when the "Add Analysis" button is clicked"""
     # Initialise an empty dictionary to store the user inputs
     new_analysis = {}
-    # Open an alert displaying the 'ArticleEdit' Form    
+    # Open an alert displaying the 'AnalysisEdit' Form    
     save_clicked = alert(
       content=AnalysisEdit(item=new_analysis),
       title="Add Analysis",
@@ -42,6 +45,7 @@ class Homepage(HomepageTemplate):
     anvil.server.call('delete_analysis', analysis)
     self.refresh_analyses()
 
-  def clone_analysis(self, analysis, **event_args):
-    anvil.server.call('clone_analysis', analysis)
+  def clone_analysis(self, clone, **event_args):
+    # Pass clone as dictionary
+    anvil.server.call('clone_analysis', dict(clone))
     self.refresh_analyses()

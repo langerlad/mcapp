@@ -42,5 +42,5 @@ class AnalysisView(AnalysisViewTemplate):
 
   def clone_analysis_btn_click(self, **event_args):
     """This method is called when the "Clone" button is clicked"""
-    # Raise the 'x-clone-analysis' event on the parent
-    self.parent.raise_event('x-clone-analysis', analysis=self.item)
+    self.parent.raise_event('x-clone-analysis', clone=self.item)
+    

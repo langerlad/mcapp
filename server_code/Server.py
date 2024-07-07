@@ -31,7 +31,7 @@ def update_analysis(analysis, analysis_dict):
     analysis_dict['updated'] = datetime.now()
     analysis.update(**analysis_dict)
   else:
-    raise Exception("Analysis does not exist")
+    raise Exception("Analysis not found")
 
 @anvil.server.callable
 def delete_analysis(analysis):
@@ -39,19 +39,13 @@ def delete_analysis(analysis):
   if app_tables.analyses.has_row(analysis):
     analysis.delete()
   else:
-    raise Exception("Analysis does not exist")
-
-@anvil.server.callable
-def clone_analysis(analysis):
-  # Get the original analysis row
-  original_analysis = app_tables.analyses.get(analysis)
-  if original_analysis is None:
     raise Exception("Analysis not found")
 
-  # Create a new analysis row with the same data
-  new_analysis = original_analysis.to_dict()
-  new_analysis['created'] = datetime.now()  # Update the created time for the new analysis
-  # del new_analysis['id']  # Remove the id field, as it will be auto-generated
-
-  new_analysis_row = app_tables.analyses.add_row(**new_analysis)
-  return new_analysis_row
+@anvil.server.callable
+def clone_analysis(clone):
+  if clone is None:
+    raise Exception("Analysis not found")  
+  clone['created'] = datetime.now()
+  clone['updated'] = None
+  app_tables.analyses.add_row(**clone)
+  
