@@ -4,12 +4,16 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{}'}
+  properties: {col_widths: '{"VPXGBE":45,"HAOATZ":15}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
+  - name: label_title
+    properties: {text: 'Multiple-criteria decision analysis:', role: headline}
+    type: Label
+    layout_properties: {grid_position: 'LETZXB,VPXGBE'}
   - name: add_analysis_btn
-    properties: {text: Add Analysis, icon: 'fa:plus-circle', role: filled-button}
+    properties: {text: Add Analysis, icon: 'fa:plus-circle', role: filled-button, align: right}
     type: Button
     layout_properties: {grid_position: 'LETZXB,HAOATZ'}
     event_bindings: {click: add_analysis_btn_click}
