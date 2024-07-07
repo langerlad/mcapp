@@ -63,7 +63,7 @@ components:
     data_bindings:
     - {property: text, code: 'self.item[''updated'']', writeback: false}
   - name: show_analysis_btn
-    properties: {text: SHOW ANALYSIS}
+    properties: {text: SHOW ANALYSIS, icon: 'fa:expand', icon_align: right_edge}
     type: Button
     layout_properties: {grid_position: 'UVHGFK,NVOSDX'}
 is_package: true
