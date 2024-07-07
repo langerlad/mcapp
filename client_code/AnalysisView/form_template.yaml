@@ -1,9 +1,9 @@
 container:
   type: ColumnPanel
-  properties: {tooltip: Delete}
+  properties: {tooltip: Show full details}
 components:
 - name: column_panel_1
-  properties: {role: elevated-card, col_widths: '{"SCCIWS":75,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10,"ISFBCE":10,"ZFYFGG":10}'}
+  properties: {role: elevated-card, col_widths: '{"SCCIWS":75,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10,"ISFBCE":10,"ZFYFGG":10,"FMGPQQ":10,"CLBXGH":14,"CHWVAK":11,"XQJZRE":13,"NVOSDX":12}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'YSCLRO,DQRRBJ'}
   components:
@@ -42,4 +42,28 @@ components:
     layout_properties: {grid_position: 'KCOTBU,IUVWTO'}
     data_bindings:
     - {property: text, code: 'self.item[''description'']', writeback: false}
+  - name: create_date_label
+    properties: {text: 'Created at:', role: null}
+    type: Label
+    layout_properties: {grid_position: 'UVHGFK,FMGPQQ'}
+  - name: created_label
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'UVHGFK,CLBXGH'}
+    data_bindings:
+    - {property: text, code: 'self.item[''created'']', writeback: false}
+  - name: last_update_date_label
+    properties: {text: 'Last update:'}
+    type: Label
+    layout_properties: {grid_position: 'UVHGFK,CHWVAK'}
+  - name: updated_label
+    properties: {}
+    type: Label
+    layout_properties: {grid_position: 'UVHGFK,XQJZRE'}
+    data_bindings:
+    - {property: text, code: 'self.item[''updated'']', writeback: false}
+  - name: show_analysis_btn
+    properties: {text: SHOW ANALYSIS}
+    type: Button
+    layout_properties: {grid_position: 'UVHGFK,NVOSDX'}
 is_package: true
