@@ -37,5 +37,5 @@ class AnalysisView(AnalysisViewTemplate):
     # Check that the user does want to delete the selected analysis
     # If yes, raise the 'x-delete-analysis' event on the parent 
     # (which is the analysis_panel on Homepage)
-    if confirm(f"Are you sure you want to delete {self.item['title']}?"):
+    if confirm(f"Are you sure you want to delete {self.item['name']}?"):
       self.parent.raise_event('x-delete-analysis', analysis=self.item)
