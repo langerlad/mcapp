@@ -26,8 +26,16 @@ class AnalysisView(AnalysisViewTemplate):
       large=True,
       buttons=[("Save", True), ("Cancel", False)]
     )
-    # Update the article if the user clicks save
+    # Update the analysis if the user clicks save
     if save_clicked:
       anvil.server.call('update_analysis', self.item, analysis_copy)
       # Now refresh the page
       self.refresh_data_bindings()
+
+  def delete_analysis_btn_click(self, **event_args):
+    """This method is called when the "Delete" button is clicked"""
+    # Check that the user does want to delete the selected analysis
+    # If yes, raise the 'x-delete-analysis' event on the parent 
+    # (which is the analysis_panel on Homepage)
+    if confirm(f"Are you sure you want to delete {self.item['title']}?"):
+      self.parent.raise_event('x-delete-analysis', analysis=self.item)

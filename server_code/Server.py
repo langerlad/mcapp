@@ -32,3 +32,12 @@ def update_analysis(analysis, analysis_dict):
     analysis.update(**analysis_dict)
   else:
     raise Exception("Analysis does not exist")
+
+@anvil.server.callable
+def delete_analysis(analysis):
+  # check that the analysis being deleted exists in the Data Table
+  if app_tables.analyses.has_row(analysis):
+    analysis.delete()
+  else:
+    raise Exception("Analysis does not exist")
+  

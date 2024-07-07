@@ -12,9 +12,12 @@ class Homepage(HomepageTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-
+    
     # Any code you write here will run before the form opens.
+    # Set an event handler on the RepeatingPanel (our 'analysis_panel')
+    self.analyses_panel.set_event_handler('x-delete-analysis', self.delete_analysis)
     self.refresh_analyses()
+    
 
   def add_analysis_btn_click(self, **event_args):
     """This method is called when the "Add Analysis" button is clicked"""
@@ -33,3 +36,7 @@ class Homepage(HomepageTemplate):
 
   def refresh_analyses(self):
     self.analyses_panel.items = anvil.server.call('get_analyses')
+
+  def delete_analysis(self, analysis, **event_args):
+    # Delete the analysis
+    anvil.server.call('delete_analysis', analysis)
