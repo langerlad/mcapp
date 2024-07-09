@@ -1,4 +1,4 @@
-from ._anvil_designer import HomepageTemplate
+from ._anvil_designer import EntrypointTemplate
 from anvil import *
 import anvil.server
 import anvil.tables as tables
@@ -8,7 +8,7 @@ from ..AnalysisEdit import AnalysisEdit
 
 
 
-class Homepage(HomepageTemplate):
+class Entrypoint(EntrypointTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)

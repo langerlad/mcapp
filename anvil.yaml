@@ -87,4 +87,4 @@ db_schema:
       admin_ui: {width: 200}
       type: link_single
       target: criteria
-startup: {type: form, module: Homepage}
+startup: {type: form, module: Entrypoint}

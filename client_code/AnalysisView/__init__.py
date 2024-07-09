@@ -43,4 +43,14 @@ class AnalysisView(AnalysisViewTemplate):
   def clone_analysis_btn_click(self, **event_args):
     """This method is called when the "Clone" button is clicked"""
     self.parent.raise_event('x-clone-analysis', clone=self.item)
+
+  def show_analysis_btn_click(self, **event_args):
+    """This method is called when the "Show analysis" button is clicked"""
+    self.show_analysis_btn.visible = False
+    self.hide_analysis_btn.visible = True
+
+  def hide_analysis_btn_click(self, **event_args):
+    """This method is called when the "Hide analysis" button is clicked"""
+    self.hide_analysis_btn.visible = False
+    self.show_analysis_btn.visible = True
     
