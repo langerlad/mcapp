@@ -37,6 +37,14 @@ def update_analysis(analysis, analysis_dict):
 def delete_analysis(analysis):
   # check that the analysis being deleted exists in the Data Table
   if app_tables.analyses.has_row(analysis):
+    # Najde všechny související záznamy v tabulce Alternatives, Criteria
+    related_rows_in_alternatives = app_tables.alternatives.search(q.any_of(analysis=analysis))
+    for row in related_rows_in_alternatives:
+      row.delete()
+    related_rows_in_criteria = app_tables.criteria.search(q.any_of(analysis=analysis))
+    for row in related_rows_in_criteria:
+      row.delete()
+    
     analysis.delete()
   else:
     raise Exception("Analysis not found")
