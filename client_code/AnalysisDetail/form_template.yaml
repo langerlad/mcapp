@@ -11,34 +11,40 @@ components:
     properties: {text: 'Step 1: Add alternatives and criteria', role: null}
     type: Label
     layout_properties: {grid_position: 'XKCANF,LLJEFX'}
-- name: data_grid_1
-  properties:
-    columns:
-    - {id: JKSDUP, title: Alternative, data_key: column_1, width: 199, expand: false}
-    - {id: ASERMQ, data_key: column_1, title: '', width: 40, expand: false}
-  type: DataGrid
-  components:
-  - name: repeating_panel_1
-    properties: {item_template: AnalysisDetail.RowTemplate1}
-    type: RepeatingPanel
   - name: add_alternative_btn
     properties: {text: '', icon: 'fa:plus'}
     type: Button
+    layout_properties: {grid_position: 'XKCANF,DNVYNG'}
+  - name: add_criteria_btn
+    properties: {text: '', icon: 'fa:plus'}
+    type: Button
+    layout_properties: {grid_position: 'XKCANF,YPBPPY'}
+- name: data_grid_1
+  properties:
+    columns:
+    - {id: JKSDUP, title: Alternative, data_key: column_1, width: 258, expand: false}
+    - {id: ASERMQ, data_key: column_1, title: '', width: 51, expand: false}
+  type: DataGrid
+  components:
+  - name: repeating_panel_1
+    properties: {item_template: AnalysisDetail.RowTemplate1, role: outlined-card}
+    type: RepeatingPanel
+    layout_properties: {}
   layout_properties: {grid_position: 'LIEAYL,TURRDE'}
 - name: data_grid_2
   properties:
     columns:
-    - {id: JKSDUP, title: Criterium, data_key: column_1, width: 300, expand: false}
+    - {id: JKSDUP, title: Criterium, data_key: column_1, width: 301, expand: false}
     - {id: VJQQOR, title: Unit, data_key: column_2}
     - {id: OJLQEN, title: Priority, data_key: column_3}
     - {id: EHRSCR, data_key: column_1, title: '', width: 39, expand: false}
+    role: null
   type: DataGrid
   components:
   - name: repeating_panel_2
-    properties: {item_template: AnalysisDetail.RowTemplate2}
+    properties: {item_template: AnalysisDetail.RowTemplate2, role: outlined-card}
     type: RepeatingPanel
-  - name: add_criteria_btn
-    properties: {text: '', icon: 'fa:plus'}
-    type: Button
+    layout_properties: {}
   layout_properties: {grid_position: 'LIEAYL,NINZRW'}
+  data_bindings: []
 is_package: true
