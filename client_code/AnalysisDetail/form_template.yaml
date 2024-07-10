@@ -1,6 +1,6 @@
 container:
   type: ColumnPanel
-  properties: {col_widths: '{"TURRDE":20,"NINZRW":40}'}
+  properties: {col_widths: '{"TURRDE":25,"NINZRW":35}'}
 components:
 - name: column_panel_1
   properties: {col_widths: '{"LLJEFX":25}'}
@@ -19,32 +19,33 @@ components:
     properties: {text: '', icon: 'fa:plus'}
     type: Button
     layout_properties: {grid_position: 'XKCANF,YPBPPY'}
-- name: data_grid_1
+- name: data_grid_alternatives
   properties:
     columns:
-    - {id: JKSDUP, title: Alternative, data_key: column_1, width: 258, expand: false}
-    - {id: ASERMQ, data_key: column_1, title: '', width: 51, expand: false}
+    - {id: JKSDUP, title: Alternative, data_key: name, width: '260', expand: true}
+    rows_per_page: 10
   type: DataGrid
   components:
-  - name: repeating_panel_1
+  - name: repeating_panel_alternatives
     properties: {item_template: AnalysisDetail.RowTemplate1, role: outlined-card}
     type: RepeatingPanel
     layout_properties: {}
   layout_properties: {grid_position: 'LIEAYL,TURRDE'}
-- name: data_grid_2
+- name: data_grid_criteria
   properties:
     columns:
-    - {id: JKSDUP, title: Criterium, data_key: column_1, width: 301, expand: false}
-    - {id: VJQQOR, title: Unit, data_key: column_2}
-    - {id: OJLQEN, title: Priority, data_key: column_3}
-    - {id: EHRSCR, data_key: column_1, title: '', width: 39, expand: false}
+    - {id: JKSDUP, title: Criterium, data_key: name, width: '260', expand: true}
+    - {id: VJQQOR, title: Unit, data_key: unit, width: '60'}
+    - {id: OJLQEN, title: Priority, data_key: priority, width: '60'}
     role: null
+    rows_per_page: 10
   type: DataGrid
   components:
-  - name: repeating_panel_2
+  - name: repeating_panel_criteria
     properties: {item_template: AnalysisDetail.RowTemplate2, role: outlined-card}
     type: RepeatingPanel
     layout_properties: {}
   layout_properties: {grid_position: 'LIEAYL,NINZRW'}
   data_bindings: []
 is_package: true
+custom_component: true

@@ -48,4 +48,13 @@ def clone_analysis(clone):
   clone['created'] = datetime.now()
   clone['updated'] = None
   app_tables.analyses.add_row(**clone)
+# ---------------------------------------------------
+
+@anvil.server.callable
+def get_alternatives():
+  return app_tables.alternatives.search()
   
+# ---------------------------------------------------
+@anvil.server.callable
+def get_criteria():
+  return app_tables.criteria.search()
