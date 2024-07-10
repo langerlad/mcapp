@@ -64,10 +64,10 @@ def clone_analysis(clone):
 # ---------------------------------------------------
 
 @anvil.server.callable
-def get_alternatives():
-  return app_tables.alternatives.search()
+def get_alternatives(analysis):
+  return app_tables.alternatives.search(analysis=analysis)
   
 # ---------------------------------------------------
 @anvil.server.callable
-def get_criteria():
-  return app_tables.criteria.search()
+def get_criteria(analysis):
+  return app_tables.criteria.search(analysis=analysis)
