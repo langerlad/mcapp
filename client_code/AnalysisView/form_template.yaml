@@ -46,6 +46,7 @@ components:
     properties: {text: 'Created at:', role: null}
     type: Label
     layout_properties: {grid_position: 'UVHGFK,FMGPQQ'}
+    data_bindings: []
   - name: created_label
     properties: {}
     type: Label
