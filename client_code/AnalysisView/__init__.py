@@ -50,9 +50,11 @@ class AnalysisView(AnalysisViewTemplate):
     """This method is called when the "Show analysis" button is clicked"""
     self.show_analysis_btn.visible = False
     self.hide_analysis_btn.visible = True
+    self.column_panel_analysis_detail.visible = True
 
   def hide_analysis_btn_click(self, **event_args):
     """This method is called when the "Hide analysis" button is clicked"""
     self.hide_analysis_btn.visible = False
     self.show_analysis_btn.visible = True
+    self.column_panel_analysis_detail.visible = False
     

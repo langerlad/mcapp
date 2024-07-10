@@ -61,6 +61,7 @@ def clone_analysis(clone):
   clone['created'] = datetime.now()
   clone['updated'] = None
   app_tables.analyses.add_row(**clone)
+  
 # ---------------------------------------------------
 
 @anvil.server.callable
