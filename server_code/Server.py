@@ -45,6 +45,11 @@ def delete_analysis(analysis):
 def clone_analysis(clone):
   if clone is None:
     raise Exception("Analysis not found")  
+
+  base_name = clone['name']
+  new_name = base_name + " Copy"
+
+  clone['name'] = new_name
   clone['created'] = datetime.now()
   clone['updated'] = None
   app_tables.analyses.add_row(**clone)
