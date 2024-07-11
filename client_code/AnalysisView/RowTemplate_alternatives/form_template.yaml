@@ -1,3 +1,7 @@
 is_package: true
 container: {type: DataRowPanel}
-components: []
+components:
+- name: editable_link_1
+  properties: {}
+  type: form:EditableLink
+  layout_properties: {column: JKSDUP}
