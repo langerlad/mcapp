@@ -13,7 +13,7 @@ class EditableLink(EditableLinkTemplate):
 
     # Any code you write here will run before the form opens.
 
-  def link_1_click(self, **event_args):
+  def link_text_click(self, **event_args):
     """This method is called when the link is clicked"""
     self.link_1.visible = False
     self.text_box_1.visible = True
@@ -28,10 +28,10 @@ class EditableLink(EditableLinkTemplate):
     self.link_1.visible = True
     self.text_box_1.visible = False
 
-  def text_box_1_lost_focus(self, **event_args):
+  def text_box_data_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
     self.save_text()
 
-  def text_box_1_pressed_enter(self, **event_args):
+  def text_box_data_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     self.save_text()

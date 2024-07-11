@@ -15,6 +15,12 @@ class AnalysisView(AnalysisViewTemplate):
     # Any code you write here will run before the form opens.
     self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
     self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
+    
+  def link_add_alternative_row_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    # přidá novou řádku do tabulky
+    anvil.server.call('add_row_to_alternatives', self.item)
+    self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
 
   def edit_analysis_btn_click(self, **event_args):
     """This method is called when the "Edit" button is clicked"""
@@ -58,10 +64,4 @@ class AnalysisView(AnalysisViewTemplate):
     self.show_analysis_btn.visible = True
     self.column_panel_analysis_detail.visible = False
 
-  def link_add_alternative_row_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    row_data = {row.get_id(): '' for row in self.alternatives}
-    # přidá novou řádku do tabulky
-    anvil.server.call('add_row_to_alternatives', self.analysis, row_data)
-    self.repeating_panel_alternatives.items = [row for row in anvil.server.call('get_alternatives',self.analysis)]
     
