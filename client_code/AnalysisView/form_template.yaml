@@ -91,7 +91,7 @@ components:
       type: DataGrid
       components:
       - name: repeating_panel_alternatives
-        properties: {item_template: AnalysisView.RowTemplate4}
+        properties: {item_template: AnalysisView.RowTemplate_alternatives}
         type: RepeatingPanel
       - name: link_add_alternative_row
         properties: {text: New alternative, icon: 'fa:plus'}
@@ -108,7 +108,7 @@ components:
       type: DataGrid
       components:
       - name: repeating_panel_criteria
-        properties: {item_template: AnalysisView.RowTemplate5}
+        properties: {item_template: AnalysisView.RowTemplate_criteria}
         type: RepeatingPanel
       layout_properties: {grid_position: 'CQQHZO,DJWMQE'}
 is_package: true
