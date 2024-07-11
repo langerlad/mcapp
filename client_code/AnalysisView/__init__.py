@@ -60,5 +60,8 @@ class AnalysisView(AnalysisViewTemplate):
 
   def link_add_alternative_row_click(self, **event_args):
     """This method is called when the link is clicked"""
-    pass
+    row_data = {row.get_id(): '' for row in self.alternatives}
+    # přidá novou řádku do tabulky
+    anvil.server.call('add_row_to_alternatives', self.analysis, row_data)
+    self.repeating_panel_alternatives.items = [row for row in anvil.server.call('get_alternatives',self.analysis)]
     

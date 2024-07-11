@@ -69,8 +69,13 @@ def get_alternatives(analysis):
   return app_tables.alternatives.search(analysis=analysis)
 
 @anvil.server.callable
-def add_row_to_alternatives()
+def add_row_to_alternatives():
+  return app_tables.alternatives.add_row(analysis=analysis, data=row_data)
 # ---------------------------------------------------
 @anvil.server.callable
 def get_criteria(analysis):
   return app_tables.criteria.search(analysis=analysis)
+
+@anvil.server.callable
+def add_row_to_criteria():
+  pass
