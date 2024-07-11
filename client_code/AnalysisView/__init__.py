@@ -57,4 +57,8 @@ class AnalysisView(AnalysisViewTemplate):
     self.hide_analysis_btn.visible = False
     self.show_analysis_btn.visible = True
     self.column_panel_analysis_detail.visible = False
+
+  def link_add_alternative_row_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
     

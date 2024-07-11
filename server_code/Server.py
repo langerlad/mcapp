@@ -67,7 +67,9 @@ def clone_analysis(clone):
 @anvil.server.callable
 def get_alternatives(analysis):
   return app_tables.alternatives.search(analysis=analysis)
-  
+
+@anvil.server.callable
+def add_row_to_alternatives()
 # ---------------------------------------------------
 @anvil.server.callable
 def get_criteria(analysis):
