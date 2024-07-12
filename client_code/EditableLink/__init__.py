@@ -31,7 +31,9 @@ class EditableLink(EditableLinkTemplate):
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""
     self.save_text()
+    
 
   def text_box_1_pressed_enter(self, **event_args):
     """This method is called when the user presses Enter in this text box"""
     self.save_text()
+    
