@@ -71,6 +71,11 @@ def get_alternatives(analysis):
 @anvil.server.callable
 def add_row_to_alternatives(analysis):
   return app_tables.alternatives.add_row(analysis=analysis)
+
+@anvil.server.callable(require_user=True)
+def change_cell_value_alternatives(row, column_id, new_text):
+  row['name'] = {**row['name'], column_id: new_text}
+
 # ---------------------------------------------------
 @anvil.server.callable
 def get_criteria(analysis):
