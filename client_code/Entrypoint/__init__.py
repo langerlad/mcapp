@@ -16,7 +16,7 @@ class Entrypoint(EntrypointTemplate):
     # Any code you write here will run before the form opens.
     
     # Set an event handlers on the RepeatingPanel (our 'analysis_panel')
-    self.analyses_panelnel.set_event_handler('x-delete-analysis', self.delete_analysis)
+    self.analyses_panel.set_event_handler('x-delete-analysis', self.delete_analysis)
     self.analyses_panel.set_event_handler('x-clone-analysis', self.clone_analysis)
                     
     self.refresh_analyses()
