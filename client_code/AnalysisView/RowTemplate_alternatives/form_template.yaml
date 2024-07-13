@@ -5,3 +5,8 @@ components:
   properties: {}
   type: form:EditableLink
   layout_properties: {column: JKSDUP}
+- name: row_delete_btn
+  properties: {text: '', icon: 'fa:trash', icon_align: left, role: null, align: center, bold: false, underline: false, tooltip: delete alternative}
+  type: Button
+  layout_properties: {column: FXDNMO}
+  event_bindings: {click: row_delete_btn_click}

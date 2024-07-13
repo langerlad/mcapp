@@ -86,8 +86,9 @@ components:
     - name: data_grid_alternatives
       properties:
         columns:
-        - {id: JKSDUP, title: Alternatives, data_key: name}
-        role: null
+        - {id: JKSDUP, title: Alternatives, data_key: name, width: '250', expand: true}
+        - {id: FXDNMO, data_key: delet_column, title: '', width: '50', expand: true}
+        role: tonal-data-grid
       type: DataGrid
       components:
       - name: repeating_panel_alternatives

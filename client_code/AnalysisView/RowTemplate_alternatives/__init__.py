@@ -21,3 +21,7 @@ class RowTemplate_alternatives(RowTemplate_alternativesTemplate):
   def change_text(self, text, **event_args):
     anvil.server.call('change_cell_value_alternatives', self.item, text)
     self.editable_link_1.link_1.text = self.item['name']
+
+  def row_delete_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
