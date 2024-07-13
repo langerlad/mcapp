@@ -24,4 +24,6 @@ class RowTemplate_alternatives(RowTemplate_alternativesTemplate):
 
   def row_delete_btn_click(self, **event_args):
     """This method is called when the button is clicked"""
-    pass
+    anvil.server.call('delete_alternative', self.item)
+    self.parent.raise_event('x-refresh-alternatives')
+

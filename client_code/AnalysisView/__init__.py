@@ -16,8 +16,9 @@ class AnalysisView(AnalysisViewTemplate):
     #self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
     self.get_alternatives()
     self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
+    self.repeating_panel_alternatives.set_event_handler('x-refresh-alternatives', self.get_alternatives)
     
-  def get_alternatives(self):
+  def get_alternatives(self, **event_args):
     #self.item is a row from the projects table
     self.alternatives = self.item
     self.rows = anvil.server.call('get_alternatives', self.alternatives)

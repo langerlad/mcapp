@@ -78,6 +78,10 @@ def add_row_to_alternatives(analysis):
 def change_cell_value_alternatives(row, new_text):
   row['name'] = new_text
 
+@anvil.server.callable
+def delete_alternative(alternative):
+  alternative.delete()
+
 # ---------------------------------------------------
 @anvil.server.callable
 def get_criteria(analysis):
