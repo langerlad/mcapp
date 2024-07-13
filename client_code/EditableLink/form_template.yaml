@@ -1,7 +1,7 @@
 container: {type: ColumnPanel}
 components:
 - name: link_1
-  properties: {}
+  properties: {role: editable-link, text: ''}
   type: Link
   layout_properties: {grid_position: 'CNBAGF,WSVUPT'}
   event_bindings: {click: link_1_click}

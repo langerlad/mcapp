@@ -1035,6 +1035,14 @@ div.plot-container.plotly svg.main-svg {
   border-radius: 12px;
 }
 
+.anvil-role-editable-link {
+  min-height: 36px;
+}
+
+.anvil-role-editable-link div.link-text {
+  color: %color:On Surface%;
+}
+
 .plot-container.plotly .main-svg .parcoords .y-axis .axis .tick > text {
   text-shadow: none !important;
 }

@@ -13,9 +13,17 @@ class AnalysisView(AnalysisViewTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
+    #self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
+    self.get_alternatives()
     self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
     
+  def get_alternatives(self):
+    #self.item is a row from the projects table
+    self.alternatives = self.item
+    self.rows = anvil.server.call('get_alternatives', self.alternatives)
+    print("Alternatives rows:", self.rows)
+    self.repeating_panel_alternatives.items = self.rows
+  
   def link_add_alternative_row_click(self, **event_args):
     """This method is called when the link is clicked"""
     # přidá novou řádku do tabulky

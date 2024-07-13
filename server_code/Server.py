@@ -66,7 +66,9 @@ def clone_analysis(clone):
 
 @anvil.server.callable
 def get_alternatives(analysis):
-  return app_tables.alternatives.search(analysis=analysis)
+  alternatives = app_tables.alternatives.search(analysis=analysis)
+  print("Alternatives from server:", alternatives)
+  return alternatives
 
 @anvil.server.callable
 def add_row_to_alternatives(analysis):
