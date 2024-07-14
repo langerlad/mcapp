@@ -75,7 +75,7 @@ components:
     data_bindings: []
     event_bindings: {click: hide_analysis_btn_click}
   - name: column_panel_analysis_detail
-    properties: {visible: false}
+    properties: {visible: false, col_widths: '{"HVACSD":25,"DJWMQE":35}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'GFBOFR,WEPJFF'}
     components:
@@ -87,8 +87,10 @@ components:
       properties:
         columns:
         - {id: JKSDUP, title: Alternatives, data_key: name, width: '250', expand: true}
-        - {id: FXDNMO, data_key: delet_column, title: '', width: '50', expand: true}
+        - {id: FXDNMO, data_key: delet_column, title: '', width: '40', expand: true}
         role: tonal-data-grid
+        rows_per_page: null
+        show_page_controls: false
       type: DataGrid
       components:
       - name: repeating_panel_alternatives
@@ -103,13 +105,23 @@ components:
     - name: data_grid_criteria
       properties:
         columns:
-        - {id: JKSDUP, title: Criterium, data_key: name}
+        - {id: EDTTJU, data_key: add_subcriterium, title: '', width: '40'}
+        - {id: JKSDUP, title: Criterium, data_key: name, width: '250', expand: true}
         - {id: VJQQOR, title: Unit, data_key: unit}
         - {id: OJLQEN, title: Priority, data_key: priority}
+        - {id: ZYBECU, data_key: delet_column, title: '', width: '40'}
+        role: tonal-data-grid
+        rows_per_page: null
+        show_page_controls: false
       type: DataGrid
       components:
       - name: repeating_panel_criteria
         properties: {item_template: AnalysisView.RowTemplate_criteria}
         type: RepeatingPanel
+      - name: link_add_criterium_row
+        properties: {text: New criterium, icon: 'fa:plus'}
+        type: Link
+        layout_properties: {slot: footer}
+        event_bindings: {click: link_add_criterium_row_click}
       layout_properties: {grid_position: 'CQQHZO,DJWMQE'}
 is_package: true

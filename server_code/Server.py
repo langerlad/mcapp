@@ -5,10 +5,9 @@ import anvil.server
 from datetime import datetime
 
 
-# This is a server module. It runs on the Anvil server,
-# rather than in the user's browser.
-# To allow anvil.server.call() to call functions here, we mark
-# them with @anvil.server.callable.
+
+
+# --------------------------------------------------- Analysis
 
 @anvil.server.callable
 def add_analysis(analysis_dict):
@@ -62,7 +61,7 @@ def clone_analysis(clone):
   clone['updated'] = None
   app_tables.analyses.add_row(**clone)
   
-# ---------------------------------------------------
+# --------------------------------------------------- Alternatives
 
 @anvil.server.callable
 def get_alternatives(analysis):
@@ -82,11 +81,11 @@ def change_cell_value_alternatives(row, new_text):
 def delete_alternative(alternative):
   alternative.delete()
 
-# ---------------------------------------------------
+# --------------------------------------------------- Criteria
 @anvil.server.callable
 def get_criteria(analysis):
   return app_tables.criteria.search(analysis=analysis)
 
 @anvil.server.callable
-def add_row_to_criteria():
-  pass
+def add_row_to_criteria(analysis):
+  return app_tables.criteria.add_row(analysis=analysis)
