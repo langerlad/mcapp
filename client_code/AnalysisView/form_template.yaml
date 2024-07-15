@@ -69,7 +69,7 @@ components:
     layout_properties: {grid_position: 'UVHGFK,NVOSDX PZLBVR,PDEZXO'}
     event_bindings: {click: show_analysis_btn_click}
   - name: hide_analysis_btn
-    properties: {text: HIDE ANALYSIS, icon: 'fa:compress', icon_align: right_edge, visible: false}
+    properties: {text: HIDE ANALYSIS, icon: 'fa:compress', icon_align: right_edge, visible: false, tooltip: Show only basic info}
     type: Button
     layout_properties: {grid_position: 'UVHGFK,NVOSDX FPBNSJ,IVJAYX'}
     data_bindings: []
@@ -109,7 +109,7 @@ components:
         - {id: JKSDUP, title: Criterium, data_key: name, width: '250', expand: true}
         - {id: VJQQOR, title: Unit, data_key: unit}
         - {id: OJLQEN, title: Priority, data_key: priority}
-        - {id: ZYBECU, data_key: delet_column, title: '', width: '40'}
+        - {id: ZYBECU, data_key: delet_column, title: '', width: '50'}
         role: tonal-data-grid
         rows_per_page: null
         show_page_controls: false

@@ -12,3 +12,16 @@ class RowTemplate_criteria(RowTemplate_criteriaTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+
+  def row_delete_btn_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+  def link_delete_row_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
+
+  def row_delete_btn_click(self, **event_args):
+  """This method is called when the button is clicked"""
+  anvil.server.call('delete_alternative', self.item)
+  self.parent.raise_event('x-refresh-alternatives')

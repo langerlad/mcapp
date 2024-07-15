@@ -37,12 +37,13 @@ class AnalysisView(AnalysisViewTemplate):
     """This method is called when the link is clicked"""
     # přidá novou řádku do tabulky
     anvil.server.call('add_row_to_alternatives', self.item)
+    # refresh tabulky
     self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
 
   def link_add_criterium_row_click(self, **event_args):
     """This method is called when the link is clicked"""
     anvil.server.call('add_row_to_criteria', self.item)
-    self.repeating_panel_alternatives.items = anvil.server.call('get_criteria', self.item)
+    self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
     
   def edit_analysis_btn_click(self, **event_args):
     """This method is called when the "Edit" button is clicked"""
