@@ -6,3 +6,15 @@ components:
   type: Link
   layout_properties: {column: ZYBECU}
   event_bindings: {click: link_delete_row_click}
+- name: editable_link_name
+  properties: {}
+  type: form:EditableLink
+  layout_properties: {column: JKSDUP}
+- name: editable_link_unit
+  properties: {}
+  type: form:EditableLink
+  layout_properties: {column: VJQQOR}
+- name: editable_link_priority
+  properties: {}
+  type: form:EditableLink
+  layout_properties: {column: OJLQEN}

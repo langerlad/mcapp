@@ -93,3 +93,7 @@ def add_row_to_criteria(analysis):
 @anvil.server.callable
 def delete_criterium(criterium):
   criterium.delete()
+
+@anvil.server.callable
+def change_cell_value_criteria(row, column, new_text):
+  row['name'] = new_text
