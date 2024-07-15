@@ -19,9 +19,6 @@ class RowTemplate_criteria(RowTemplate_criteriaTemplate):
 
   def link_delete_row_click(self, **event_args):
     """This method is called when the link is clicked"""
-    pass
-
-  def row_delete_btn_click(self, **event_args):
-  """This method is called when the button is clicked"""
-  anvil.server.call('delete_alternative', self.item)
-  self.parent.raise_event('x-refresh-alternatives')
+    anvil.server.call('delete_criterium', self.item)
+    self.parent.raise_event('x-refresh-criteria')
+  

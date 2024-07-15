@@ -89,3 +89,7 @@ def get_criteria(analysis):
 @anvil.server.callable
 def add_row_to_criteria(analysis):
   return app_tables.criteria.add_row(analysis=analysis)
+
+@anvil.server.callable
+def delete_criterium(criterium):
+  criterium.delete()

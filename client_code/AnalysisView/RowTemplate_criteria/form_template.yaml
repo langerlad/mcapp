@@ -2,7 +2,7 @@ is_package: true
 container: {type: DataRowPanel}
 components:
 - name: link_delete_row
-  properties: {role: null, icon: 'fa:trash', align: center, tooltip: Detete criterium}
+  properties: {role: null, icon: 'fa:trash', align: center, tooltip: Detete criterium, spacing_above: medium, spacing_below: none}
   type: Link
   layout_properties: {column: ZYBECU}
   event_bindings: {click: link_delete_row_click}
