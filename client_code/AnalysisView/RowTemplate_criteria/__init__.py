@@ -12,20 +12,19 @@ class RowTemplate_criteria(RowTemplate_criteriaTemplate):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
+    self.editable_link_name.add_event_handler('x-change-text', self.change_text_name)
+    self.editable_link_unit.add_event_handler('x-change-text', self.change_text_unit)
+    self.editable_link_priority.add_event_handler('x-change-text', self.change_text_priority)
 
- # self.editable_link_1.add_event_handler('x-change-text', self.change_text)
- #    print("Initializing RowTemplate_alternatives with item:", self.item)
- #    self.editable_link_1.link_1.text = self.item['name']
-    
-
- #  def change_text(self, text, **event_args):
- #    anvil.server.call('change_cell_value_alternatives', self.item, text)
- #    #self.editable_link_1.link_1.text = self.item['name'] , změna funguje
- #    self.editable_link_1.link_1.text = self.item
-
-  def change_text(self, text, **event_args):
-    anvil.server.call('change_cell_value_criteria', self.item, text)
+  def change_text_name(self, text, **event_args):
+    anvil.server.call('change_cell_value_criteria', self.item, 'name', text)
     self.editable_link_name.link_1.text = self.item
+
+  def change_text_unit(self, text, **event_args):
+    anvil.server.call('change_cell_value_criteria', self.item, 'unit', text)
+
+  def change_text_priority(self, text, **event_args):
+    anvil.server.call('change_cell_value_criteria', self.item, 'priority', text)
   
   def row_delete_btn_click(self, **event_args):
     """This method is called when the button is clicked"""

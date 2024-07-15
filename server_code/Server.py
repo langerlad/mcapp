@@ -96,4 +96,7 @@ def delete_criterium(criterium):
 
 @anvil.server.callable
 def change_cell_value_criteria(row, column, new_text):
-  row['name'] = new_text
+  if column in ["name", "unit", "priority"]:
+    row[column] = new_text
+  else:
+    raise ValueError(f"Invalid column: {column}")
