@@ -15,15 +15,23 @@ class AnalysisView(AnalysisViewTemplate):
     # Any code you write here will run before the form opens.
     #self.repeating_panel_alternatives.items = anvil.server.call('get_alternatives', self.item)
     self.get_alternatives()
-    self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
+    self.get_criteria()
+    #self.repeating_panel_criteria.items = anvil.server.call('get_criteria', self.item)
     self.repeating_panel_alternatives.set_event_handler('x-refresh-alternatives', self.get_alternatives)
     
   def get_alternatives(self, **event_args):
-    #self.item is a row from the projects table
+    #self.item is a row from the table
     self.alternatives = self.item
     self.rows = anvil.server.call('get_alternatives', self.alternatives)
     print("Alternatives rows:", self.rows)
     self.repeating_panel_alternatives.items = self.rows
+
+  def get_criteria(self, **event_args):
+    #self.item is a row from the table
+    self.criteria = self.item
+    self.rows = anvil.server.call('get_criteria', self.criteria)
+    print("Criteria rows:", self.rows)
+    self.repeating_panel_criteria.items = self.rows
   
   def link_add_alternative_row_click(self, **event_args):
     """This method is called when the link is clicked"""
