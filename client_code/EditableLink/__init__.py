@@ -27,7 +27,6 @@ class EditableLink(EditableLinkTemplate):
       self.link_1.text = self.text
     self.link_1.visible = True
     self.text_box_1.visible = False
-    print("vykonaná funkce save_text")
 
   def text_box_1_lost_focus(self, **event_args):
     """This method is called when the TextBox loses focus"""

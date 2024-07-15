@@ -95,8 +95,11 @@ def delete_criterium(criterium):
   criterium.delete()
 
 @anvil.server.callable
-def change_cell_value_criteria(row, column, new_text):
-  if column in ["name", "unit", "priority"]:
-    row[column] = new_text
-  else:
-    raise ValueError(f"Invalid column: {column}")
+def change_cell_value_criteria(row, column, new_value):
+    if column == "priority":
+        # Convert the new_value to a number
+        new_value = float(new_value)
+    if column in ["name", "unit", "priority"]:
+        row[column] = new_value
+    else:
+        raise ValueError(f"Invalid column: {column}")
