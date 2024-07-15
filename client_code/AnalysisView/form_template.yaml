@@ -87,7 +87,7 @@ components:
       properties:
         columns:
         - {id: JKSDUP, title: Alternatives, data_key: name, width: '250', expand: true}
-        - {id: FXDNMO, data_key: delet_column, title: '', width: '40', expand: true}
+        - {id: FXDNMO, data_key: delet_column, title: '', width: '35', expand: false}
         role: tonal-data-grid
         rows_per_page: null
         show_page_controls: false
@@ -109,7 +109,7 @@ components:
         - {id: JKSDUP, title: Criterium, data_key: name, width: '250', expand: true}
         - {id: VJQQOR, title: Unit, data_key: unit}
         - {id: OJLQEN, title: Priority, data_key: priority}
-        - {id: ZYBECU, data_key: delet_column, title: '', width: '30'}
+        - {id: ZYBECU, data_key: delet_column, title: '', width: '35'}
         role: tonal-data-grid
         rows_per_page: null
         show_page_controls: false

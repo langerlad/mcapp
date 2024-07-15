@@ -15,15 +15,17 @@ class RowTemplate_alternatives(RowTemplate_alternativesTemplate):
     # Any code you write here will run before the form opens.
     self.editable_link_1.add_event_handler('x-change-text', self.change_text)
     print("Initializing RowTemplate_alternatives with item:", self.item)
-    self.editable_link_1.link_1.text = self.item['name']
+    #self.editable_link_1.link_1.text = self.item['name']
+    self.editable_link_1.link_1.text = self.item
     
 
   def change_text(self, text, **event_args):
     anvil.server.call('change_cell_value_alternatives', self.item, text)
-    self.editable_link_1.link_1.text = self.item['name']
+    #self.editable_link_1.link_1.text = self.item['name'] , změna funguje
+    self.editable_link_1.link_1.text = self.item
 
-  def row_delete_btn_click(self, **event_args):
-    """This method is called when the button is clicked"""
+  def link_delete_row_click(self, **event_args):
+    """This method is called when the link is clicked"""
     anvil.server.call('delete_alternative', self.item)
     self.parent.raise_event('x-refresh-alternatives')
 
