@@ -19,7 +19,12 @@ components:
   type: form:EditableLink
   layout_properties: {column: OJLQEN}
 - name: link_max
-  properties: {spacing_above: medium, tooltip: Maximizing / minimizing criterium, icon: 'fa:chevron-up'}
+  properties: {spacing_above: medium, tooltip: Maximizing / minimizing criterium, icon: 'fa:chevron-up', icon_align: left, align: center}
   type: Link
   layout_properties: {column: JTSHVN}
   event_bindings: {click: link_max_click}
+- name: link_sub
+  properties: {icon: '', tooltip: Add subcriterium, text: Sub}
+  type: Link
+  layout_properties: {column: EDTTJU}
+  data_bindings: []
