@@ -18,3 +18,8 @@ components:
   properties: {}
   type: form:EditableLink
   layout_properties: {column: OJLQEN}
+- name: link_max
+  properties: {spacing_above: medium, tooltip: Maximizing / minimizing criterium, icon: 'fa:chevron-up'}
+  type: Link
+  layout_properties: {column: JTSHVN}
+  event_bindings: {click: link_max_click}

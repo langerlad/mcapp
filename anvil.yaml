@@ -69,8 +69,11 @@ db_schema:
       type: link_single
       target: analyses
     - name: parent
-      admin_ui: {width: 200, order: 5}
+      admin_ui: {order: 3.5, width: 200}
       type: string
+    - name: direction
+      admin_ui: {order: 2.5, width: 200}
+      type: bool
   values:
     title: Values
     client: none

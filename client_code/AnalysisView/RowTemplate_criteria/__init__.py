@@ -44,4 +44,8 @@ class RowTemplate_criteria(RowTemplate_criteriaTemplate):
     """This method is called when the link is clicked"""
     anvil.server.call('delete_criterium', self.item)
     self.parent.raise_event('x-refresh-criteria')
+
+  def link_max_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
   

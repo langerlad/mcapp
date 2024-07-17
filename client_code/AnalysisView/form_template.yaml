@@ -75,7 +75,7 @@ components:
     data_bindings: []
     event_bindings: {click: hide_analysis_btn_click}
   - name: column_panel_analysis_detail
-    properties: {visible: false, col_widths: '{"HVACSD":25,"DJWMQE":35}'}
+    properties: {visible: false, col_widths: '{"HVACSD":20,"DJWMQE":40}'}
     type: ColumnPanel
     layout_properties: {grid_position: 'GFBOFR,WEPJFF'}
     components:
@@ -86,7 +86,7 @@ components:
     - name: data_grid_alternatives
       properties:
         columns:
-        - {id: JKSDUP, title: Alternatives, data_key: name, width: '250', expand: true}
+        - {id: JKSDUP, title: Alternatives, data_key: name, width: '200', expand: true}
         - {id: FXDNMO, data_key: delet_column, title: '', width: '35', expand: false}
         role: tonal-data-grid
         rows_per_page: null
@@ -106,9 +106,10 @@ components:
       properties:
         columns:
         - {id: EDTTJU, data_key: add_subcriterium, title: '', width: '40'}
-        - {id: JKSDUP, title: Criterium, data_key: name, width: '250', expand: true}
+        - {id: JKSDUP, title: Criterium, data_key: name, width: '200', expand: true}
         - {id: VJQQOR, title: Unit, data_key: unit}
         - {id: OJLQEN, title: Priority, data_key: priority}
+        - {id: JTSHVN, data_key: direction, title: Direction, width: ''}
         - {id: ZYBECU, data_key: delet_column, title: '', width: '35'}
         role: tonal-data-grid
         rows_per_page: null
