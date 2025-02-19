@@ -1,12 +1,12 @@
-is_package: true
-container: {type: DataRowPanel}
 components:
-- name: editable_link_1
+- layout_properties: {column: JKSDUP}
+  name: editable_link_1
   properties: {}
   type: form:EditableLink
-  layout_properties: {column: JKSDUP}
-- name: link_delete_row
-  properties: {tooltip: Delete alternative, icon: 'fa:trash', spacing_above: medium, spacing_below: none, align: center}
-  type: Link
+- event_bindings: {click: link_delete_row_click}
   layout_properties: {column: FXDNMO}
-  event_bindings: {click: link_delete_row_click}
+  name: link_delete_row
+  properties: {align: center, icon: 'fa:trash', spacing_above: medium, spacing_below: none, tooltip: Delete alternative}
+  type: Link
+container: {type: DataRowPanel}
+is_package: true

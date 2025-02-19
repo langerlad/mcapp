@@ -1,28 +1,28 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{"VPXGBE":45,"HAOATZ":15}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - name: label_title
-    properties: {text: 'Multiple-criteria decision analysis:', role: headline}
+- components:
+  - layout_properties: {grid_position: 'LETZXB,VPXGBE'}
+    name: label_title
+    properties: {role: headline, text: 'Multiple-criteria decision analysis:'}
     type: Label
-    layout_properties: {grid_position: 'LETZXB,VPXGBE'}
-  - name: add_analysis_btn
-    properties: {text: Add Analysis, icon: 'fa:plus-circle', role: filled-button, align: right}
-    type: Button
-    layout_properties: {grid_position: 'LETZXB,HAOATZ'}
+  - data_bindings: []
     event_bindings: {click: add_analysis_btn_click}
-    data_bindings: []
-  - name: analyses_panel
+    layout_properties: {grid_position: 'LETZXB,HAOATZ'}
+    name: add_analysis_btn
+    properties: {align: right, icon: 'fa:plus-circle', role: filled-button, text: Add Analysis}
+    type: Button
+  - layout_properties: {grid_position: 'VIEHPO,TZYAPU'}
+    name: analyses_panel
     properties: {item_template: AnalysisView}
     type: RepeatingPanel
-    layout_properties: {grid_position: 'VIEHPO,TZYAPU'}
-- type: FlowPanel
-  properties: {}
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{"VPXGBE":45,"HAOATZ":15}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
+  properties: {}
+  type: FlowPanel
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+is_package: true

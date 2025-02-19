@@ -1,4 +1,8 @@
 unique_ids:
+  assets:
+    MCApp_logo.png: '1720379218505483112690247.852'
+    standard-page.html: 5DW76KCZAKVH4DV2FCWFL5YST6HD4ERX
+    theme.css: DBXBNNXVKL6E3PRY3FUFLJRDA7LELIGD
   forms:
     AnalysisEdit: '1720215906103470586079473.39825'
     AnalysisView: '1720297972260611909810046.1772'
@@ -8,10 +12,6 @@ unique_ids:
     Entrypoint: V5JJVZRAVYKZO7R5KNQX2EC5G54APEEI
     Entrypoint.ItemTemplate1: '1720298473598451633620469.6096'
   modules: {}
+  scripts: {}
   server_modules:
     Server: '1720296988191229963799708.04526'
-  assets:
-    MCApp_logo.png: '1720379218505483112690247.852'
-    standard-page.html: 5DW76KCZAKVH4DV2FCWFL5YST6HD4ERX
-    theme.css: DBXBNNXVKL6E3PRY3FUFLJRDA7LELIGD
-  scripts: {}

@@ -1,33 +1,33 @@
-container: {type: ColumnPanel}
 components:
-- name: label_1
+- layout_properties: {grid_position: 'FFDVPP,XIPILA'}
+  name: label_1
   properties: {text: 'Analysis title:'}
   type: Label
-  layout_properties: {grid_position: 'FFDVPP,XIPILA'}
-- name: analysis_name_box
+- data_bindings:
+  - {code: 'self.item[''name'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'FFDVPP,EGCIRW'}
+  name: analysis_name_box
   properties: {}
   type: TextBox
-  layout_properties: {grid_position: 'FFDVPP,EGCIRW'}
-  data_bindings:
-  - {property: text, code: 'self.item[''name'']', writeback: true}
-- name: label_2
+- layout_properties: {grid_position: 'RMKJED,ZUULQH'}
+  name: label_2
   properties: {text: 'Author:'}
   type: Label
-  layout_properties: {grid_position: 'RMKJED,ZUULQH'}
-- name: analysis_author_box
+- data_bindings:
+  - {code: 'self.item[''author'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'RMKJED,BKLQFU'}
+  name: analysis_author_box
   properties: {}
   type: TextBox
-  layout_properties: {grid_position: 'RMKJED,BKLQFU'}
-  data_bindings:
-  - {property: text, code: 'self.item[''author'']', writeback: true}
-- name: label_3
+- layout_properties: {grid_position: 'CJDKSJ,CJUTQE'}
+  name: label_3
   properties: {text: 'Analysis description:'}
   type: Label
-  layout_properties: {grid_position: 'CJDKSJ,CJUTQE'}
-- name: analysis_description_box
+- data_bindings:
+  - {code: 'self.item[''description'']', property: text, writeback: true}
+  layout_properties: {grid_position: 'CJDKSJ,BYQUTS'}
+  name: analysis_description_box
   properties: {}
   type: TextArea
-  layout_properties: {grid_position: 'CJDKSJ,BYQUTS'}
-  data_bindings:
-  - {property: text, code: 'self.item[''description'']', writeback: true}
+container: {type: ColumnPanel}
 is_package: true

@@ -1,128 +1,128 @@
-container:
-  type: ColumnPanel
-  properties: {tooltip: Show full details}
 components:
-- name: column_panel_1
-  properties: {role: elevated-card, col_widths: '{"SCCIWS":75,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10,"ISFBCE":10,"ZFYFGG":10,"FMGPQQ":10,"CLBXGH":14,"CHWVAK":11,"XQJZRE":13,"NVOSDX":12}'}
-  type: ColumnPanel
-  layout_properties: {grid_position: 'YSCLRO,DQRRBJ'}
-  components:
-  - name: name_label
+- components:
+  - data_bindings:
+    - {code: 'self.item[''name'']', property: text, writeback: false}
+    layout_properties: {grid_position: 'KGTHPP,SCCIWS'}
+    name: name_label
     properties: {role: title}
     type: Label
-    layout_properties: {grid_position: 'KGTHPP,SCCIWS'}
-    data_bindings:
-    - {property: text, code: 'self.item[''name'']', writeback: false}
-  - name: edit_analysis_btn
-    properties: {text: '', role: filled-button, icon: 'fa:pencil-square-o', tooltip: Edit, align: right}
-    type: Button
-    layout_properties: {grid_position: 'KGTHPP,ISFBCE', full_width_row: false}
-    data_bindings: []
+  - data_bindings: []
     event_bindings: {click: edit_analysis_btn_click}
-  - name: clone_analysis_btn
-    properties: {text: '', role: filled-button, icon: 'fa:clone', tooltip: Clone}
+    layout_properties: {full_width_row: false, grid_position: 'KGTHPP,ISFBCE'}
+    name: edit_analysis_btn
+    properties: {align: right, icon: 'fa:pencil-square-o', role: filled-button, text: '', tooltip: Edit}
     type: Button
+  - event_bindings: {click: clone_analysis_btn_click}
     layout_properties: {grid_position: 'KGTHPP,ZFYFGG'}
-    event_bindings: {click: clone_analysis_btn_click}
-  - name: delete_analysis_btn
-    properties: {text: '', align: left, role: filled-button, icon: 'fa:trash-o', background: ''}
+    name: clone_analysis_btn
+    properties: {icon: 'fa:clone', role: filled-button, text: '', tooltip: Clone}
     type: Button
-    layout_properties: {grid_position: 'KGTHPP,ZHCNDY'}
-    data_bindings: []
+  - data_bindings: []
     event_bindings: {click: delete_analysis_btn_click}
-  - name: author_lable
-    properties: {}
-    type: Label
+    layout_properties: {grid_position: 'KGTHPP,ZHCNDY'}
+    name: delete_analysis_btn
+    properties: {align: left, background: '', icon: 'fa:trash-o', role: filled-button, text: ''}
+    type: Button
+  - data_bindings:
+    - {code: 'self.item[''author'']', property: text, writeback: false}
     layout_properties: {grid_position: 'KCOTBU,NKIUFK'}
-    data_bindings:
-    - {property: text, code: 'self.item[''author'']', writeback: false}
-  - name: description_label
+    name: author_lable
     properties: {}
     type: Label
+  - data_bindings:
+    - {code: 'self.item[''description'']', property: text, writeback: false}
     layout_properties: {grid_position: 'KCOTBU,IUVWTO'}
-    data_bindings:
-    - {property: text, code: 'self.item[''description'']', writeback: false}
-  - name: create_date_label
-    properties: {text: 'Created at:', role: null}
-    type: Label
-    layout_properties: {grid_position: 'UVHGFK,FMGPQQ'}
-    data_bindings: []
-  - name: created_label
+    name: description_label
     properties: {}
     type: Label
+  - data_bindings: []
+    layout_properties: {grid_position: 'UVHGFK,FMGPQQ'}
+    name: create_date_label
+    properties: {role: null, text: 'Created at:'}
+    type: Label
+  - data_bindings:
+    - {code: 'self.item[''created'']', property: text, writeback: false}
     layout_properties: {grid_position: 'UVHGFK,CLBXGH'}
-    data_bindings:
-    - {property: text, code: 'self.item[''created'']', writeback: false}
-  - name: last_update_date_label
+    name: created_label
+    properties: {}
+    type: Label
+  - layout_properties: {grid_position: 'UVHGFK,CHWVAK'}
+    name: last_update_date_label
     properties: {text: 'Last update:'}
     type: Label
-    layout_properties: {grid_position: 'UVHGFK,CHWVAK'}
-  - name: updated_label
+  - data_bindings:
+    - {code: 'self.item[''updated'']', property: text, writeback: false}
+    layout_properties: {grid_position: 'UVHGFK,XQJZRE'}
+    name: updated_label
     properties: {}
     type: Label
-    layout_properties: {grid_position: 'UVHGFK,XQJZRE'}
-    data_bindings:
-    - {property: text, code: 'self.item[''updated'']', writeback: false}
-  - name: show_analysis_btn
-    properties: {text: SHOW ANALYSIS, icon: 'fa:expand', icon_align: right_edge}
-    type: Button
+  - event_bindings: {click: show_analysis_btn_click}
     layout_properties: {grid_position: 'UVHGFK,NVOSDX PZLBVR,PDEZXO'}
-    event_bindings: {click: show_analysis_btn_click}
-  - name: hide_analysis_btn
-    properties: {text: HIDE ANALYSIS, icon: 'fa:compress', icon_align: right_edge, visible: false, tooltip: Show only basic info}
+    name: show_analysis_btn
+    properties: {icon: 'fa:expand', icon_align: right_edge, text: SHOW ANALYSIS}
     type: Button
-    layout_properties: {grid_position: 'UVHGFK,NVOSDX FPBNSJ,IVJAYX'}
-    data_bindings: []
+  - data_bindings: []
     event_bindings: {click: hide_analysis_btn_click}
-  - name: column_panel_analysis_detail
-    properties: {visible: false, col_widths: '{"HVACSD":20,"DJWMQE":40}'}
-    type: ColumnPanel
-    layout_properties: {grid_position: 'GFBOFR,WEPJFF'}
-    components:
-    - name: spacer_1
+    layout_properties: {grid_position: 'UVHGFK,NVOSDX FPBNSJ,IVJAYX'}
+    name: hide_analysis_btn
+    properties: {icon: 'fa:compress', icon_align: right_edge, text: HIDE ANALYSIS, tooltip: Show only basic info, visible: false}
+    type: Button
+  - components:
+    - layout_properties: {grid_position: 'GGZZBS,LCVXYG'}
+      name: spacer_1
       properties: {height: 32}
       type: Spacer
-      layout_properties: {grid_position: 'GGZZBS,LCVXYG'}
-    - name: data_grid_alternatives
-      properties:
-        columns:
-        - {id: JKSDUP, title: Alternatives, data_key: name, width: '200', expand: true}
-        - {id: FXDNMO, data_key: delet_column, title: '', width: '35', expand: false}
-        role: tonal-data-grid
-        rows_per_page: null
-        show_page_controls: false
-      type: DataGrid
-      components:
+    - components:
       - name: repeating_panel_alternatives
         properties: {item_template: AnalysisView.RowTemplate_alternatives}
         type: RepeatingPanel
-      - name: link_add_alternative_row
-        properties: {text: New alternative, icon: 'fa:plus'}
-        type: Link
+      - event_bindings: {click: link_add_alternative_row_click}
         layout_properties: {slot: footer}
-        event_bindings: {click: link_add_alternative_row_click}
+        name: link_add_alternative_row
+        properties: {icon: 'fa:plus', text: New alternative}
+        type: Link
       layout_properties: {grid_position: 'CQQHZO,HVACSD'}
-    - name: data_grid_criteria
+      name: data_grid_alternatives
       properties:
         columns:
-        - {id: EDTTJU, data_key: add_subcriterium, title: '', width: '40'}
-        - {id: JKSDUP, title: Criterium, data_key: name, width: '200', expand: true}
-        - {id: VJQQOR, title: Unit, data_key: unit}
-        - {id: OJLQEN, title: Priority, data_key: priority}
-        - {id: JTSHVN, data_key: direction, title: Direction, width: ''}
-        - {id: ZYBECU, data_key: delet_column, title: '', width: '35'}
+        - {data_key: name, expand: true, id: JKSDUP, title: Alternatives, width: '200'}
+        - {data_key: delet_column, expand: false, id: FXDNMO, title: '', width: '35'}
         role: tonal-data-grid
         rows_per_page: null
         show_page_controls: false
       type: DataGrid
-      components:
+    - components:
       - name: repeating_panel_criteria
         properties: {item_template: AnalysisView.RowTemplate_criteria}
         type: RepeatingPanel
-      - name: link_add_criterium_row
-        properties: {text: New criterium, icon: 'fa:plus'}
-        type: Link
+      - event_bindings: {click: link_add_criterium_row_click}
         layout_properties: {slot: footer}
-        event_bindings: {click: link_add_criterium_row_click}
+        name: link_add_criterium_row
+        properties: {icon: 'fa:plus', text: New criterium}
+        type: Link
       layout_properties: {grid_position: 'CQQHZO,DJWMQE'}
+      name: data_grid_criteria
+      properties:
+        columns:
+        - {data_key: add_subcriterium, id: EDTTJU, title: '', width: '40'}
+        - {data_key: name, expand: true, id: JKSDUP, title: Criterium, width: '200'}
+        - {data_key: unit, id: VJQQOR, title: Unit}
+        - {data_key: priority, id: OJLQEN, title: Priority}
+        - {data_key: direction, id: JTSHVN, title: Direction, width: ''}
+        - {data_key: delet_column, id: ZYBECU, title: '', width: '35'}
+        role: tonal-data-grid
+        rows_per_page: null
+        show_page_controls: false
+      type: DataGrid
+    layout_properties: {grid_position: 'GFBOFR,WEPJFF'}
+    name: column_panel_analysis_detail
+    properties: {col_widths: '{"HVACSD":20,"DJWMQE":40}', visible: false}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'YSCLRO,DQRRBJ'}
+  name: column_panel_1
+  properties: {col_widths: '{"SCCIWS":75,"NKIUFK":25,"IUVWTO":35,"ZHCNDY":10,"ISFBCE":10,"ZFYFGG":10,"FMGPQQ":10,"CLBXGH":14,"CHWVAK":11,"XQJZRE":13,"NVOSDX":12}', role: elevated-card}
+  type: ColumnPanel
+container:
+  properties: {tooltip: Show full details}
+  type: ColumnPanel
 is_package: true
